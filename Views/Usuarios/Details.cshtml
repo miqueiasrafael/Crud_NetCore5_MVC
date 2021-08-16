@@ -1,0 +1,41 @@
+﻿@model AppOficial.Models.Usuario
+
+@{
+    ViewData["Title"] = "Detalhes do registro";
+}
+
+@*<h1>Detalhes do registro</h1>*@
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do registro</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome)</dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Login)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Login) </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Hash)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Hash) </dd>
+                <dt class="col-sm-3"> @Html.DisplayNameFor(model => model.Foto) </dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Foto) </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataCadastro)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DataCadastro)</dd>
+            </dl>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-md badge-info">Editar</a> 
+            @*<a asp-action="Index">Voltar para lista</a>*@
+        </div>
+
+
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

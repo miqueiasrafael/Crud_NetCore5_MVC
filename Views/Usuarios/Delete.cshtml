@@ -1,0 +1,44 @@
+﻿@model AppOficial.Models.Usuario
+
+@{
+    ViewData["Title"] = "Delete de registros";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Deseja realmente deletar esse usuário?</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            @*<h4>Deseja realmente excluir o <strong>@Html.DisplayFor(model => model.Nome) </strong> ?</h4>*@
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nome) </dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Nome) </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)   </dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)   </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Login) </dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Login)  </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Hash) </dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Hash)  </dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Foto)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Foto)</dd>
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DataCadastro)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DataCadastro)</dd>
+            </dl>
+        </div><!-- /.modal-content -->
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Deletar" class="btn btn-danger" />
+                @*<a asp-action="Index">Cancelar</a>*@
+            </form>
+        </div>
+    </div><!-- /.modal-dialog -->
+</div>
+

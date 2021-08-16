@@ -1,0 +1,53 @@
+﻿@model AppOficial.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Detalhes do veículo";
+}
+
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Detalhes do registro</h4>
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <dl class="row">
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Modelo)
+                </dd>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.AnoFabricacao)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.AnoFabricacao)
+                </dd>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.AnoModelo)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.AnoModelo)
+                </dd>
+                <dt class="col-sm-5">
+                    @Html.DisplayNameFor(model => model.Foto)
+                </dt>
+                <dd class="col-sm-7">
+                    @Html.DisplayFor(model => model.Foto)
+                </dd>
+            </dl>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-md badge-info">Editar</a>
+            @*<a asp-action="Index">Voltar para lista</a>*@
+        </div>
+
+
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
